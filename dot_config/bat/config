@@ -1,0 +1,5 @@
+# 主题
+--theme="TwoDark"
+
+# 不显示行号
+--decorations=never

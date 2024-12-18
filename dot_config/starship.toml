@@ -1,0 +1,219 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "catppuccin_latte"
+
+add_newline = false
+
+[username]
+style_user = 'green bold'
+style_root = 'black bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+ssh_symbol = " "
+format = '[$ssh_symbol](bold blue) on [$hostname](grey bold) in '
+disabled = false
+
+[git_branch]
+symbol = " "
+style = "bold mauve"
+
+[directory]
+read_only = " 󰌾"
+truncation_length = 3
+truncation_symbol = '.../'
+style = "bold lavender"
+
+# Palette definitions
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "

@@ -1,0 +1,32 @@
+{
+    "Create HomePage": {
+        "prefix": "homepage",
+        "body": [
+            "void main(List<String> args) {",
+            "  runApp(MaterialApp(",
+            "    home: Scaffold(",
+            "      appBar: AppBar(",
+            "        centerTitle: true,",
+            "        title: const Text(\"$1\"),",
+            "      ),",
+            "      body: const HomePage(),",
+            "    ),",
+            "  ));",
+            "}",
+            "",
+            "class HomePage extends StatefulWidget {",
+            "  const HomePage({super.key});",
+            "",
+            "  @override",
+            "  State<HomePage> createState() => _HomePageState();",
+            "}",
+            "",
+            "class _HomePageState extends State<HomePage> {",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return const Placeholder();",
+            "  }",
+            "}",
+        ]
+    }
+}

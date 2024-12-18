@@ -1,0 +1,20 @@
+{
+    "Print to console": {
+        "prefix": "log",
+        "body": [
+            "console.log('$1');",
+            "$2"
+        ],
+        "description": "Log output to console"
+    },
+    "New Vue Instance": {
+        "prefix": "newvue",
+        "body": [
+            "const $3 = new Vue({",
+            "    el: '$1',",
+            "    data: $2",
+            "});"
+        ],
+        "description": "Create a new Vue instance"
+    }
+}

@@ -4,7 +4,7 @@ function pkgsizesort
         return 1
     end
 
-    set packages $(pacman -Qq | rg -e $argv)
+    set packages $(pacman -Qqs $argv)
 
     if test (count $packages) -eq 0
         echo "不存在符合条件的软件包"

@@ -1,5 +1,5 @@
 function pkgstatus
-    for cmd in expac pikaur
+    for cmd in expac aur-check-updates
         if ! type -q $cmd
             echo "请先安装$cmd"
             return 1
@@ -46,26 +46,25 @@ function pkgstatus
     set PACMAN_CACHE_DIR /var/cache/pacman/pkg
 
     set PACMAN_VERSION (string match -r "Pacman v\d.+ - libalpm v\d.+" (pacman -V))
-    set PIKAUR_VERSION (string match -r "Pikaur v\d.+" (pikaur -V))
     set TOTAL_PACKAGE_NUM (count (pacman -Qq))
     set TOTAL_PACKAGE_EXPLICITY (count (pacman -Qqe))
     set TOTAL_PACKAGE_AUR (count (pacman -Qqm))
     set TOTAL_PACKAGE_SIZE (__cal_total_package_size)
     set PACMAN_CACHE_SIZE (__proper_unit (string match -r "^\d+" (du -b $PACMAN_CACHE_DIR)))
-    set PIKAUR_CACHE_SIZE 0
+    set LOCALREPO_SIZE 0
     if test -d $LOCALREPO_DIR
-        set PIKAUR_CACHE_SIZE (__proper_unit (string match -r "^\d+" (du -b $LOCALREPO_DIR)))
+        set LOCALREPO_SIZE (__proper_unit (string match -r "^\d+" (du -b $LOCALREPO_DIR)))
     end
     set TOP10_PACKAGES (expac -S -H M -Q '%m %n' (pacman -Qq) | sort -rh | head -n 10)
 
-    echo -e "\e[1;38;2;177;225;139m==>\e[0m $PACMAN_VERSION | $PIKAUR_VERSION"
+    echo -e "\e[1;38;2;177;225;139m==>\e[0m $PACMAN_VERSION"
     __print_delimiter
     __print_package_status "已安装的软件包总数" $TOTAL_PACKAGE_NUM
     __print_package_status "已安装的外部软件包" $TOTAL_PACKAGE_AUR
     __print_package_status "单独指定安装的软件包" $TOTAL_PACKAGE_EXPLICITY
     __print_package_status "软件包占用的总大小" $TOTAL_PACKAGE_SIZE
     __print_package_status "Pacman缓存大小" $PACMAN_CACHE_SIZE
-    __print_package_status "本地仓库大小" $PIKAUR_CACHE_SIZE
+    __print_package_status "本地仓库大小" $LOCALREPO_SIZE
     __print_delimiter
 
     echo -e "\e[1;38;2;177;225;139m==>\e[0m 十个最大的软件包"
@@ -78,5 +77,5 @@ function pkgstatus
     __print_delimiter
 
     echo -e "\e[1;38;2;177;225;139m==>\e[0m 可更新的AUR软件包"
-    pikaur -Qu --aur --config $HOME/AUR/build-chroot/conf/pacman.conf
+    aur-check-updates --repos core,extra -n
 end

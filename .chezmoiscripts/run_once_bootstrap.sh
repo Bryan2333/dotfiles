@@ -106,7 +106,7 @@ function bootstrap_mpv() {
     then
         __note "Bootstrapping mpv player"
 
-        download_resource "$XDG_CONFIG_HOME/mpv/scripts" "https://github.com/cyl0/ModernX/raw/main/modernx.lua" "https://github.com/po5/thumbfast/raw/master/thumbfast.lua" "https://gist.githubusercontent.com/Bryan2333/a212c9460ec8e8dd3b3296ad43da6939/raw/bbbf70690537edf0086c34e6e68a9187c694fd26/night-color.lua"
+        download_resource "$XDG_CONFIG_HOME/mpv/scripts" "https://github.com/cyl0/ModernX/raw/main/modernx.lua" "https://github.com/po5/thumbfast/raw/master/thumbfast.lua" "https://gist.githubusercontent.com/bryan2333/a212c9460ec8e8dd3b3296ad43da6939/raw/night-color.lua"
 
         download_resource "$XDG_CONFIG_HOME/mpv/fonts" "https://github.com/cyl0/ModernX/raw/main/Material-Design-Iconic-Font.ttf"
     fi

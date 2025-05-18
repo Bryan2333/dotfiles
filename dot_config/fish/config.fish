@@ -79,9 +79,12 @@ if status is-interactive
     abbr -a aria2c 'aria2c -s16 -x16 -k1M'
 
     ## makechrootpkg
-    abbr -a chroot-build 'makechrootpkg -d ~/AUR/pkgs:/mnts/pkgs -d ~/.local/share/cargo:/mnts/cargo -d ~/.cache/ccache:/mnts/ccache -d ~/.cache/go/mod:/mnts/go/mod -d ~/.cache/go-build:/mnts/go/build -d ~/.config/npm:/mnts/npm/config -d ~/.cache/npm:/mnts/npm/cache -d ~/.local/share/npm:/mnts/npm/data -d ~/.local/state/npm/logs:/mnts/npm/logs -d ~/.cache/yarn:/mnts/yarn -c -r $CHROOT -- --clean'
-
     abbr -a chroot-update 'arch-nspawn $CHROOT/root pacman -Syu'
+
+    ## pacman
+    abbr -a pasy 'sudo bash -c "pacman -Sy && pacman -Fy && pkgfile -u --compress=lz4"'
+    abbr -a pasu 'sudo pacman -Su'
+    abbr -a paqu 'pacman -Qu'
     # }}}
 
     # key bindings {{{

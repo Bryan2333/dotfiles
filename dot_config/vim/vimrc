@@ -1,3 +1,6 @@
+" 设置viminfo路径
+set viminfo+=n~/.config/vim/viminfo
+
 " 自动安装vim-plug和缺失插件
 if empty(glob('~/.config/vim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs
@@ -21,6 +24,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-rooter'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'lambdalisue/vim-suda'
 
 call plug#end()
 
@@ -101,3 +105,6 @@ let g:rooter_change_directory_for_non_project_files='current'
 " ycm
 set completeopt-=preview " 关闭文档提示
 let g:ycm_collect_identifiers_from_tags_files=1 " 开启YCM基于标签引擎
+
+" vim-suda
+let g:suda_smart_edit=1

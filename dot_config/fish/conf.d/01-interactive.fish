@@ -15,9 +15,6 @@ set -gx PUB_HOSTED_URL https://mirrors.tuna.tsinghua.edu.cn/dart-pub
 ## less命令显示PUA
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 
-## chroot路径
-set -gx CHROOT $HOME/AUR/build-chroot
-
 ## kerl路径
 set -gx KERL_BASE_DIR $HOME/.cache/kerl
 
@@ -80,7 +77,7 @@ abbr -a xlsclients 'qdbus6 org.kde.KWin /KWin org.kde.KWin.showDebugConsole'
 abbr -a aria2c 'aria2c -s16 -x16 -k1M'
 
 ## makechrootpkg
-abbr -a chroot-update 'arch-nspawn $CHROOT/root pacman -Syu'
+abbr -a chroot-update 'arch-nspawn ~/AUR/build-chroot/root pacman -Syu'
 
 ## pacman
 abbr -a pasy 'sudo bash -c "pacman -Sy && pacman -Fy && pkgfile -u --compress=lz4"'

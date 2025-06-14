@@ -1,4 +1,5 @@
 log-file: /dev/null
+non-interactive: true
 input-file: ""
 output-file: ""
 ignore-dirs:

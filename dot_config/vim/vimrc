@@ -1,0 +1,111 @@
+" 设置viminfo路径
+set viminfo+=n~/.config/vim/viminfo
+
+" 自动安装vim-plug和缺失插件
+if empty(glob('~/.config/vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+" fcitx5_remote
+let g:fcitx5_remote="/usr/bin/fcitx5-remote"
+
+" 插件
+call plug#begin()
+
+Plug 'preservim/nerdtree'
+Plug 'lilydjwg/fcitx.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
+Plug 'airblade/vim-rooter'
+Plug 'joshdick/onedark.vim'
+Plug 'lambdalisue/vim-suda'
+
+call plug#end()
+
+" leader键
+let mapleader = " "
+
+" 主题
+if !empty($DISPLAY)
+    set termguicolors
+endif
+
+try
+    let g:onedark_termcolors=16
+    colorscheme onedark
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme default
+endtry
+
+" 不同模式下的光标
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+" 缩进
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" 行号
+set number
+set relativenumber
+
+" 搜索
+set ignorecase
+set smartcase
+set is hls
+autocmd cursorhold * set nohlsearch
+noremap n :set hlsearch<cr>n
+noremap N :set hlsearch<cr>N
+noremap / :set hlsearch<cr>/
+noremap ? :set hlsearch<cr>?
+noremap * *:set hlsearch<cr>
+
+" 语法高亮
+syntax on
+
+" 文件类型检测
+filetype indent plugin on
+
+" 剪切板
+set clipboard=unnamedplus,unnamed
+
+" 高亮当前行
+set cursorline
+
+" 文本折叠方法是
+set foldmethod=marker
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" lightline.vim
+set laststatus=2
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \ }
+
+" vim-rooter
+nnoremap <silent> cd :Rooter<CR>
+let g:rooter_manual_only=1
+let g:rooter_change_directory_for_non_project_files='current'
+
+" ycm
+set completeopt-=preview " 关闭文档提示
+let g:ycm_collect_identifiers_from_tags_files=1 " 开启YCM基于标签引擎
+
+" vim-suda
+let g:suda_smart_edit=1

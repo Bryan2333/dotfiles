@@ -1,0 +1,5 @@
+# 不显示行号
+--decorations=never
+
+# 自动换行
+--wrap=character

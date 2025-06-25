@@ -1,0 +1,7 @@
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+command -v fish >/dev/null 2>&1 && eval "$(fish -l -c 'for line in (env); set pair (string split -m1 "=" $line); echo "export $pair[1]=\"$pair[2]\""; end')"

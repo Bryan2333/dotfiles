@@ -73,9 +73,6 @@ abbr -a replasma 'systemctl --user restart plasma-plasmashell.service'
 abbr -a xlsclients 'qdbus6 org.kde.KWin /KWin org.kde.KWin.showDebugConsole'
 abbr -a aria2c 'aria2c -s16 -x16 -k1M'
 
-## makechrootpkg
-abbr -a chroot-update 'arch-nspawn ~/AUR/build-chroot/root pacman -Syu'
-
 ## pacman
 abbr -a pasy 'sudo bash -c "pacman -Sy && pacman -Fy && pkgfile -u --compress=lz4"'
 abbr -a pasu 'sudo pacman -Su'

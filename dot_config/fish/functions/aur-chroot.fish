@@ -37,7 +37,8 @@ function aur-chroot
             -d ~/.local/share/npm:/mnts/npm/data \
             -d ~/.local/state/npm/logs:/mnts/npm/logs \
             -d ~/.cache/yarn:/mnts/yarn \
-            -d ~/.local/share/cargo:/mnts/cargo
+            -d ~/.local/share/cargo:/mnts/cargo \
+            -d ~/.cache/pub-cache:/mnts/pub-cache
 
         # 检查挂载目录是否存在
         for i in $mounts

@@ -52,7 +52,7 @@ function aur-chroot
             not test -d $dst_dir; and mkdir -p $dst_dir
         end
 
-        makechrootpkg $mounts -c -r $CHROOT $extra_args
+        makechrootpkg $mounts -u -c -r $CHROOT $extra_args
     end
 
     switch $argv[1]

@@ -26,10 +26,10 @@ set -gx GTK2_RC_FILES           "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -gx HISTFILE                "$XDG_STATE_HOME/bash/history"
 set -gx MAVEN_ARGS              "--settings $XDG_CONFIG_HOME/maven/settings.xml"
 set -gx MYSQL_HISTFILE          "$XDG_DATA_HOME/mysql_history"
-set -gx MYCLI_HISTFILE          "$XDG_DATA_HOME/mycli-history"
 set -gx NODE_REPL_HISTORY       "$XDG_DATA_HOME/node_repl_history"
 set -gx NPM_CONFIG_USERCONFIG   "$XDG_CONFIG_HOME/npm/npmrc"
 set -gx NUGET_PACKAGES          "$XDG_CACHE_HOME/NuGetPackages"
+set -gx PARALLEL_HOME           "$XDG_CONFIG_HOME/parallel"
 set -gx PNPM_HOME               "$XDG_DATA_HOME/pnpm"
 set -gx PUB_CACHE               "$XDG_CACHE_HOME/pub-cache"
 set -gx PYTHON_HISTORY          "$XDG_STATE_HOME/python_history"
@@ -57,6 +57,13 @@ set -gx CHROME_EXECUTABLE "/usr/bin/vivaldi"
 
 ## ADB MDNS
 set -gx ADB_MDNS 0
+
+## dart-pub镜像
+set -gx PUB_HOSTED_URL https://mirrors.tuna.tsinghua.edu.cn/dart-pub
+
+## rustup镜像
+set -gx RUSTUP_DIST_SERVER https://mirrors.ustc.edu.cn/rust-static
+set -gx RUSTUP_UPDATE_ROOT https://mirrors.ustc.edu.cn/rust-static/rustup
 
 ## 拓展PATH变量
 set -l user_paths \

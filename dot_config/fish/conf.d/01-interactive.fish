@@ -5,13 +5,6 @@ status is-interactive; or exit
 ## FZF默认命令
 set -gx FZF_DEFAULT_COMMAND "find -xdev \! \( -path '*/.git' -prune \) -printf '%P\n'"
 
-## rustup镜像
-set -gx RUSTUP_DIST_SERVER https://mirrors.ustc.edu.cn/rust-static
-set -gx RUSTUP_UPDATE_ROOT https://mirrors.ustc.edu.cn/rust-static/rustup
-
-## dart-pub镜像
-set -gx PUB_HOSTED_URL https://mirrors.tuna.tsinghua.edu.cn/dart-pub
-
 ## less命令显示PUA
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 
@@ -74,7 +67,7 @@ abbr -a xlsclients 'qdbus6 org.kde.KWin /KWin org.kde.KWin.showDebugConsole'
 abbr -a aria2c 'aria2c -s16 -x16 -k1M'
 
 ## pacman
-abbr -a pasy 'sudo bash -c "pacman -Sy && pacman -Fy && pkgfile -u --compress=lz4"'
+abbr -a pasy '# 先查看~/Documents/before-roll.txt && sudo bash -c "pacman -Sy && pacman -Fy && pkgfile -u --compress=lz4"'
 abbr -a pasu 'sudo pacman -Su'
 abbr -a paqu 'pacman -Qu'
 # }}}
